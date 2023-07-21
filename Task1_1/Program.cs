@@ -25,6 +25,6 @@ else if(number==6){
 else if(number==7){
   Console.WriteLine(" Воскресенье ");
 }
-else if(number > 7) {
+else {
   Console.WriteLine(" Наберите число от 1 до 7");
 }
