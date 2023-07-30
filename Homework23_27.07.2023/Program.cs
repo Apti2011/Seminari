@@ -14,6 +14,6 @@ void NumberCube(int num)
 {
 for(int i = 1; i<=num; i++){
    int numCube=i*i*i;
-   Console.WriteLine(numCube);
+   Console.WriteLine($"{i, 3}{numCube, 5}");
 }
 }
