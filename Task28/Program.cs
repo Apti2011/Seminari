@@ -29,7 +29,6 @@ int CompositionNumbers(int num)
         {
             composition *= i; // composition = composition * i
         }
-    
-    return composition;
-    }
+        }
+        return composition;
 }
