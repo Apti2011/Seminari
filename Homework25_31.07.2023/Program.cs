@@ -15,10 +15,12 @@ if(number2 < 0)
   number2 *= -1;
 }
 
-int exponent=number1;
-
-for(int i = 1; i<number2; i++){
-exponent=exponent*number1;
-Console.WriteLine(exponent);
+NumberExponent(number1, number2);
+void NumberExponent(int num1, int num2)
+{
+long exponent=num1;
+for(int i = 1; i<num2; i++){
+exponent=exponent*num1;
 }
-
+Console.WriteLine($"Число {num1} в {num2} степени равно {exponent}");
+}
