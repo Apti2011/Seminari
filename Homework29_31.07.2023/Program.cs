@@ -11,7 +11,7 @@ void FillArr(int[] arr)
   Random rnd = new Random();
   for (int i =0; i<arr.Length; i++)
   {
-    arr[i] = rnd.Next(-99, 99);//new Random().Next(2)
+    arr[i] = rnd.Next(-99, 99);
   }
 }
 void PrintArr(int[] arr){
