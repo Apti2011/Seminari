@@ -14,7 +14,7 @@ int[] CreateArrayRndInt(int size, int min, int max)//метод, для созд
 
     return arr; //возврат массива
 }
-void PrintArray(int[] arr)
+void PrintArray(int[] arr)//Метод(функция) для вывода массива в консоль
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
@@ -24,7 +24,24 @@ void PrintArray(int[] arr)
     }
     Console.Write("]");
 }
-int GetSumPositiveElem(int[] arr)
+
+//Возврат суммы отрицательных и положительных элементов массива одним методом
+// int[] GetSumPositiveNegativeElem(int[] arr)
+// {
+// int sumNegative =0;
+// int sumNegative =0;
+// for (int i = 0; i < arr.Length; i++)
+// {
+//     if(arr[i] < 0) sumNegative += arr[i];//sumNegative = sumNegative + arr[i];
+//     else sumPositive += arr[i];
+// }
+//     return new int[]{sumNegative, sumPositive};
+// }
+//int[] sumPositiveNegativeElem = GetSumPositiveNegativeElem(array); // вызов метода
+//Console.WriteLine($"Сумма отрицательных элементов = {sumPositiveNegativeElem[0]}");
+//Console.WriteLine($"Сумма положительных элементов = {sumPositiveNegativeElem[1]}");
+
+int GetSumPositiveElem(int[] arr)//Найти сумму положительных элементов массива
 {
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
@@ -34,7 +51,7 @@ int GetSumPositiveElem(int[] arr)
     return  sum;
 }
 
-int GetSumNegativeElem(int[] arr)
+int GetSumNegativeElem(int[] arr)//Найти сумму отрицательных элементов массива
 {
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
@@ -45,11 +62,11 @@ int GetSumNegativeElem(int[] arr)
 }
 int[] array = CreateArrayRndInt(12, -9, 9);
 PrintArray(array);
-int[] sumPositiveNegativeElem = GetSumPositiveNegativeElem(array);
-Console.WriteLine($"Сумма отрицательных элементов = {sumPositiveNegativeElem[0]}");
-Console.WriteLine($"Сумма положительных элементов = {sumPositiveNegativeElem[1]}");
+
+
 
 int sumPositiveElem = GetSumPositiveElem(array);
 int sumNegativeElem = GetSumNegativeElem(array);
+Console.WriteLine("");
 Console.WriteLine($"Сумма отрицательных элементов = {sumNegativeElem}");
 Console.WriteLine($"Сумма положительных элементов = {sumPositiveElem}");
