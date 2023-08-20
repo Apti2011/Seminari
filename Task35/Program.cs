@@ -42,6 +42,7 @@ int CountTwoDigitNumbers(int[] arr, int start, int end)
     {
         if (arr[i] >= start && arr[i] <= end)
             count++;
+            
     }
     return count;
 }
