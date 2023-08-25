@@ -17,4 +17,4 @@ num=num/10;
 return sum;
 }
 int sum = NumberSum(number);
-Console.WriteLine($sum);
+Console.WriteLine(sum);
