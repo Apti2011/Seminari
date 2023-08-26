@@ -2,36 +2,46 @@
 //0, 7, 8, -2, -2 -> 2
 //1, -7, 567, 89, 223-> 3
 
-Console.WriteLine("Введите первый элемент массива ");
-int number1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество элементов массива: ");
+int elements = Convert.ToInt32(Console.ReadLine());
+int[] myArray = new int[elements];
 
-Console.WriteLine("Введите второй элемент массива ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите третий элемент массива ");
-int number3 = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите четвертый элемент массива ");
-int number4 = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите пятый элемент массива ");
-int number5 = Convert.ToInt32(Console.ReadLine());
-
-int[] array = {number1, number2, number3, number4, number5};
-
-int CountPositiveNumbers(int[] arr)
+//Заполнение массива с клавиатуры
+int [] CreateArray(int[] myArr)
 {
-  int count = 0;
-  for (int i = 0; i<arr.Length; i++)
-  {
-    if (arr[i] > 0)
+    for (int i = 0; i < myArr.Length; i++)
     {
-      count++;
-    }
-  }
-  return count;
+        Console.Write($"Введите элемент массива {i} ");
+        myArr[i] = Convert.ToInt32(Console.ReadLine());
+     }
+    return myArr;
 }
 
-int result = CountPositiveNumbers (array);
-Console.Write (string.Join (" ", array));
-Console.Write ($"-> {result}");
+//Вывод массива
+void PrintArray(int[] arr)
+{
+    Console.WriteLine("Вывод массива:");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write($"{myArray[i]} ");
+    }
+}
+
+//Сколько элементов больше 0 ввёл пользователь
+int PositiveNumbers(int[] arr)
+ {
+   int count = 0;
+   for (int i = 0; i<arr.Length; i++)
+   {
+     if (arr[i] > 0)
+     {
+       count++;
+     }
+   }
+   return count;
+ }
+
+int[] myArray1 = CreateArray(myArray);
+int result = PositiveNumbers(myArray1);
+PrintArray (myArray1);
+Console.Write($"-> {result}");
