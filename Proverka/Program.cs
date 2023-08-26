@@ -1,20 +1,17 @@
-﻿//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-//452 -> 11
-//82 -> 10
-//9012 -> 12
+﻿//ЗАПОЛНИТЬ МАССИВ С КЛАВИАТУРЫ 
+Console.Write("Введите количество элементов массива: ");
+int elementsCount = Convert.ToInt32(Console.ReadLine());
+int[] myArray = new int[elementsCount];
 
-Console.WriteLine("Введите число ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-int NumberSum(int num)
+for(int i =0; i < myArray.Length; i++)
 {
-int sum=0;
-while(num !=0){
-int result = num % 10;
-sum=sum+result;
-num=num/10;
+  Console.Write($"Введите элемент массива под индексом {i} ");
+  myArray[i] = Convert.ToInt32(Console.ReadLine());
 }
-return sum;
+
+Console.WriteLine("Вывод массива:");
+for (int i = 0; i < myArray.Length; i++)
+{
+  Console.Write($"{myArray[i]} ");
+ 
 }
-int sum = NumberSum(number);
-Console.WriteLine(sum);
