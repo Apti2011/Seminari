@@ -9,43 +9,44 @@
 //Метод создания двух мерного массива и заполнения двухмерного массива случайными целыми числами
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)//rows(колличество строк) columns(колличество столбцов)
 {
-    int[,] matrix = new int[rows, columns];
-    Random rnd = new Random();
+  int[,] matrix = new int[rows, columns];
+  Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++)//количество этераций соответствующих колличеству строк
+  for (int i = 0; i < matrix.GetLength(0); i++)//количество этераций соответствующих колличеству строк
+  {
+    for (int j = 0; j < matrix.GetLength(1); j++)//количество этераций соответствующих количеству столбцов
     {
-      for (int j =0; j<matrix.GetLength(1); j++)//количество этераций соответствующих количеству столбцов
-        {
-          matrix[i, j] = rnd.Next(min, max + 1);
-        }
+      matrix[i, j] = rnd.Next(min, max + 1);
     }
-    return matrix; 
- }
+  }
+  return matrix;
+}
 
 //Метод печати двухмерного массива и вывод в консоль
 void PrintMatrix(int[,] matrix)
 {
   for (int i = 0; i < matrix.GetLength(0); i++)
   {
-      for (int j = 0; j < matrix.GetLength(1); j++)
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
       Console.Write($"{matrix[i, j],6} ");//, 6 длина строки куда помещается результат вывода       
     }
-      Console.WriteLine();
+    Console.WriteLine();
   }
 }
 
+//Находим элементы, у которых оба индекса чётные и заменяем эти элементы на их квадраты.
 void ReplaceEvenRowsColumnsSquare(int[,] matrix)
 {
-  for (int i = 0; i < matrix.GetLength(0); i++)//количество этераций соответствующих колличеству строк
+  for (int i = 0; i < matrix.GetLength(0); i += 2)//количество этераций соответствующих колличеству строк
   {
-    for (int j = 0; j < matrix.GetLength(1); j++)//количество этераций соответствующих количеству столбцов
-    {
-      if (i % 2 == 0 && j % 2 == 0)
+    for (int j = 0; j < matrix.GetLength(1); j += 2)//количество этераций соответствующих количеству столбцов
+    //{
+      //if (i % 2 == 0 && j % 2 == 0)
       {
         matrix[i, j] *= matrix[i, j];
       }
-    }
+    //}
   }
 }
 
