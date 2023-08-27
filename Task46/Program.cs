@@ -6,7 +6,7 @@
 //1  5 -2 33 -2
 //2  77 3  8  1
 
-//Заполнение двухмерного массива
+//Метод создания двух мерного массива и заполнения двухмерного массива случайными целыми числами
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)//rows(колличество строк) columns(колличество столбцов)
 {
     int[,] matrix = new int[rows, columns];
@@ -22,16 +22,18 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)//rows(кол�
     return matrix; 
  }
 
+//Метод печати двухмерного массива и вывод в консоль
 void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-    Console.Write("[");
+    //Console.Write("|");
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-       Console.Write($"{matrix[i, j]} ");        
+       Console.Write($"{matrix[i, j], 6} ");//, 6 длина строки куда помещается результат вывода       
     }
-    Console.WriteLine("]");
+    //Console.WriteLine("|");
+    Console.WriteLine();
     }
 }
 
